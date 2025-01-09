@@ -88,8 +88,18 @@ public class Tallyer {
                 idTally.put(id, idTally.get(id) + 1);
             }
         }
-    // If 
 
+    for (int i = 0; i < ids.size(); i++) {
+        if (idTally.get(ids.get(i)) > 2) {
+            continue;
+        }
+        if (!filteredTally.containsKey(topics.get(i))) {
+            filteredTally.put(topics.get(i), 1);
+        }
+        else {
+            filteredTally.put(topics.get(i), filteredTally.get(topics.get(i)) + 1);
+        }
+    }
 
       return filteredTally;
   }
