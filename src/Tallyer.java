@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
 import java.util.*;
 
 /**
@@ -52,7 +48,7 @@ public class Tallyer {
      */
     public static Map<String, Integer> tallyTopics(List<String> topics) {
         // WAVE 1
-        Map<String, Integer> topicTally = new HashMap<String, Integer>();
+        Map<String, Integer> topicTally = new HashMap<>();
 
         for (String topic : topics) {
             if (!topicTally.containsKey(topic)) {
@@ -79,9 +75,22 @@ public class Tallyer {
      * @return a map containing topics as keys and their occurrence counts as values
      */
     public static Map<String, Integer> tallyTopicsFiltered(List<String> ids, List<String> topics) {
-      // WAVE 2
-      // TODO: Implement this method
+      Map<String, Integer> filteredTally = new HashMap<>();
+      Map<String, Integer> idTally = new HashMap<>();
+      Set<String> badIds = new HashSet<>();
 
-      return null;
+    // Count all occurences of each id, store results in a map
+    for (String id : ids) {
+            if (!idTally.containsKey(id)) {
+                idTally.put(id, 1);
+            }
+            else {
+                idTally.put(id, idTally.get(id) + 1);
+            }
+        }
+    // If 
+
+
+      return filteredTally;
   }
 }
